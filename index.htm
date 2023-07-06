@@ -1,116 +1,98 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
-			var GlobalJSConfig =
-			{
-				context: '/StudInfo',
-				facultyId: '1',
-				faculty: 'matf',
-				indexRegexp: '^((\\d{1,4}(/|-)(\\d{4}|\\d{2}))|([A-Za-z]{2}\\d{5}))$',
-				cacheVersion: '2022-12'
-			};
-		</script><link rel="icon" type="image/png" href="https://hypatia.matf.bg.ac.rs:10333/StudInfo/images/favicon-192x192.png" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="https://hypatia.matf.bg.ac.rs:10333/StudInfo/images/favicon-apple-touch-icon.png"><link rel="shortcut icon" href="https://hypatia.matf.bg.ac.rs:10333/StudInfo/images/favicon.ico"><link rel="mask-icon" href="https://hypatia.matf.bg.ac.rs:10333/StudInfo/images/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="https://hypatia.matf.bg.ac.rs:10333/StudInfo/images/manifest.webmanifest"><title>Добродошли!</title><meta name="viewport" content="width=device-width, maximum-scale=3, minimum-scale=-4, user-scalable=yes"><link href="index_files/osnovno.css" media="screen" rel="stylesheet" type="text/css"><link href="index_files/prijavljivanje.css" media="screen" rel="stylesheet" type="text/css"><link href="index_files/mobilni.css" media="only screen and (max-width: 600px)" rel="stylesheet" type="text/css"><link href="index_files/sviKorisnici.css" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="https://hypatia.matf.bg.ac.rs:10333/StudInfo/images/favicon-apple-touch-icon.png"><link rel="icon" type="image/png" href="https://hypatia.matf.bg.ac.rs:10333/StudInfo/images/favicon-192x192.png" sizes="192x192"><link rel="shortcut icon" href="https://hypatia.matf.bg.ac.rs:10333/StudInfo/images/favicon.ico"><script language="javascript" src="index_files/Util.js"></script><script language="javascript" src="index_files/Report.js"></script><script language="javascript" src="index_files/javascript.js"></script><script language="javascript" src="index_files/forms.js"></script><script language="javascript" src="index_files/jquery.js"></script><script language="javascript">
-			window.onload = function(e)
-			{
-				document.getElementById('submit').disabled = false;
-
-				var loginForm = document.forms["login-student"];
-
-				loginForm["index"].focus();
-
-				loginForm.onsubmit = function(e)
-				{
-					var button = document.getElementById("submit");
-					button.disabled = true;
-					var fields = [new ValField('index', 'non-null', 'Број индекса'),
-						new ValField('index', 'student-index', 'Број индекса'),
-						new ValField(document.getElementById('password').name, 'non-null', 'Лозинка')];
-
-					var valid = validateForm(this.name, fields);
-
-					if (!valid)
-					{
-						this["index"].focus();
-						button.disabled = false;
-					}
-
-					return(valid);
-				}
-				
-				
-				loginForm["code"].value = '1676683126941';
+<!DOCTYPE html>
+<html class="js mozilla layout-large" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>АЛАС - Webmail за студенте :: Welcome to АЛАС - Webmail за студенте</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0"><meta name="theme-color" content="#f4f4f4"><meta name="msapplication-navbutton-color" content="#f4f4f4">
+	<link rel="shortcut icon" href="https://webmail.alas.matf.bg.ac.rs/skins/elastic/images/favicon.ico?s=1660476372">
+	<link rel="stylesheet" href="index_files/bootstrap.min.css">
+	
+		<link rel="stylesheet" href="index_files/styles.min.css">
+		
+	
+	
+		<script>
+		try {
+			if (document.cookie.indexOf('colorMode=dark') > -1
+				|| (document.cookie.indexOf('colorMode=light') === -1 && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.className += ' dark-mode';
 			}
-		</script></head>
-	<body><a name="vrh" id="vrh"></a><div id="allContents">
-			<div id="opisTableRow">
-				<div id="help">
-					
+		} catch (e) { }
+		</script>
+	
+<link rel="stylesheet" type="text/css" href="index_files/jquery-ui.min.css"><script src="index_files/jquery.min.js"></script><script src="index_files/common.min.js"></script><script src="index_files/app.min.js"></script><script src="index_files/jstz.min.js"></script><script>
+/*
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
 
-					Да бисте се пријавили, унесите свој број индекса
-					
-					у облику број/година и лозинку коју користите на студентском серверу Алас.
-					
-					Кодни распоред мора бити постављен на енглеску латиницу.<br>
-					<br>
-					Пријављивање је могуће само за студенте који студирају по новом систему студирања.<br>
-				    <br>
-				    <noscript>
-				    <span style="color: red; font-weight: bold;">Неопходно је да у Вашем претраживачу буде укључен JavaScript!</span><br>
-					<br>
-				    </noscript>
-				    
-					У случају проблема са пријављивањем, пошаљите поруку
-					
-					на <a href="mailto:pomoc@alas.matf.bg.ac.rs">pomoc@alas.matf.bg.ac.rs</a>.
-					
-				    Порука треба да садржи број индекса, текст грешке и податке који се прикажу кликом на линк
-				    <nobr>„Технички подаци“</nobr> поред текста грешке.<br>
-					
-				    <br>
-				    Студенти који су прешли на нови скуп студијских програма као и студенти дипломских
-				    и докторских студија који не могу да се пријаве треба да пошаљу стари и нови број индекса
-				    на наведену адресу.
-					
-					
-					
-				</div>
-			</div>
-			<div id="loginTableRow">
-				<div id="tabela">
-					<table style="align: left; width: 100%;">
-						<tbody>
-							<tr><td>
-								<form action="prvastrana.htm">
-									<table class="login" style="background-color: #D2E0BC;" align="center">
-										<thead style="background-color: #025B53">
-											<tr><th>Студент</th></tr>
-										</thead>
-										<tbody>
-											<tr><td>
-												<label for="index">број индекса</label><br>
-												<input name="index" id="index" type="text" autocomplete="off">
-											</td></tr>
-											<tr><td>
-												<label for="password">лозинка</label><br>
-												<input name="code" id="code" value="1676683126941" type="hidden">
-												<input name="password-1676683126941" id="password" value="" type="password" autocomplete="off">
-											</td></tr>
-										</tbody>
-										<tfoot>
-											<tr><td>
-												<button id="submit" type="submit">Пријавите се</button>
-											</td></tr>
-										</tfoot>
-									</table>
-								<input type="hidden" name="csrfToken" value="5108242334422225653"></form>
-								<div id="copyright-msg" class="non-printable" style="margin-top: 25px;">
-									Информациони систем СтудИнфо, верзија 2022-12
-									© 2005-2023 Универзитет у Београду - Математички факултет
-								</div>
-							</td></tr>		
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div><a name="dno" id="dno"></a>
+        Copyright (C) The Roundcube Dev Team
+
+        The JavaScript code in this page is free software: you can redistribute
+        it and/or modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation, either version 3 of
+        the License, or (at your option) any later version.
+
+        The code is distributed WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU GPL for more details.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"login","standard_windows":false,"locale":"en_US","devel_mode":null,"rcversion":10503,"cookie_domain":"","cookie_path":"/","cookie_secure":true,"dark_mode_support":true,"skin":"elastic","blankpage":"skins/elastic/watermark.html","refresh_interval":60,"session_lifetime":600,"action":"","comm_path":"./?_task=login","compose_extwin":false,"date_format":"yy-mm-dd","date_format_localized":"YYYY-MM-DD","request_token":"GeJGnUj0WOue5k9t9vIEItO7pgmxMpdA"});
+rcmail.add_label({"loading":"Loading...","servererror":"Server Error!","connerror":"Connection Error (Failed to reach the server)!","requesttimedout":"Request timed out","refreshing":"Refreshing...","windowopenerror":"The popup window was blocked!","uploadingmany":"Uploading files...","uploading":"Uploading file...","close":"Close","save":"Save","cancel":"Cancel","alerttitle":"Attention","confirmationtitle":"Are you sure...","delete":"Delete","continue":"Continue","ok":"OK","back":"Back","errortitle":"An error occurred!","options":"Options","plaintoggle":"Plain text","htmltoggle":"HTML","previous":"Previous","next":"Next","select":"Select","browse":"Browse","choosefile":"Choose file...","choosefiles":"Choose files..."});
+rcmail.gui_container("loginfooter","login-footer");rcmail.gui_object('loginform', 'login-form');
+rcmail.gui_object('message', 'messagestack');
+</script>
+
+<script src="index_files/jquery-ui.min.js"></script>
+</head>
+<body class="task-login action-none">
+	
+		<div id="layout">
+	
+
+
+<h1 class="voice">АЛАС - Webmail за студенте Login</h1>
+
+<div id="layout-content" class="selected no-navbar" role="main">
+	<img src="index_files/logo.svg" id="logo" alt="Logo">
+	<form id="login-form" name="login-form" method="post" class="propform" action="prvastrana.htm">
+<input type="hidden" name="_token" value="GeJGnUj0WOue5k9t9vIEItO7pgmxMpdA" class="form-control">
+	<input type="hidden" name="_task" value="login" class="form-control"><input type="hidden" name="_action" value="login" class="form-control"><input type="hidden" name="_timezone" id="rcmlogintz" value="Europe/Sarajevo" class="form-control"><input type="hidden" name="_url" id="rcmloginurl" class="form-control"><table><tbody><tr class="form-group row"><td class="title" style="display: none;"><label for="rcmloginuser">Username</label></td><td class="input input-group input-group-lg"><span class="input-group-prepend"><i class="input-group-text icon user"></i></span><input name="_user" id="rcmloginuser" required="" size="40" class="form-control" autocapitalize="none" autocomplete="off" type="text" placeholder="Username"></td></tr><tr class="form-group row"><td class="title" style="display: none;"><label for="rcmloginpwd">Password</label></td><td class="input input-group input-group-lg"><span class="input-group-prepend"><i class="input-group-text icon pass"></i></span><input name="_pass" id="rcmloginpwd" required="" size="40" class="form-control" autocapitalize="none" autocomplete="off" type="password" placeholder="Password"></td></tr></tbody></table><p class="formbuttons"><button type="submit" id="rcmloginsubmit" class="button mainaction submit btn btn-primary btn-lg text-uppercase w-100">Login</button></p>
+		<div id="login-footer" role="contentinfo">
+			АЛАС - Webmail за студенте
+			
+			
+				&nbsp;•&nbsp; <a href="mailto:admin@matf.bg.ac.rs" target="_blank" class="support-link">Get support</a>
+			
+			
+		</div>
+	</form>
+</div>
+
+<noscript>
+	<p class="noscriptwarning">Warning: This webmail service requires Javascript! In order to use it please enable Javascript in your browser's settings.</p>
+</noscript>
+
+
+</div>
+
+<a href="mailto:admin@matf.bg.ac.rs" target="_blank" id="supportlink" class="hidden">Get support</a>
+
+
+
+<div id="messagestack"></div>
+<script>
+$(function() {
+rcmail.init();
+});
+</script>
+
+
+
+<script src="index_files/bootstrap.bundle.min.js"></script>
+<script src="index_files/ui.min.js"></script>
 
 
 </body></html>
